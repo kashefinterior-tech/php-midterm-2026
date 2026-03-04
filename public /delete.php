@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 // delete the form from sql database. first we prepare the database, and then we will excute it. we cant directly delete the form
 if ($id) {
-    $sql = "DELETE FROM person WHERE id = :id";
+    $sql = "DELETE FROM registration WHERE id = :id";
 
     $stmt = $db->prepare($sql);
 

@@ -18,11 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = $_POST['email'];
 
-    $update = $db->prepare("UPDATE person SET name = :name, email = :email WHERE id = :id");
+    $update = $db->prepare("UPDATE registration SET first_name = :first_name, last_name = :last_name, email = :email, phone=:phone WHERE id = :id");
     $update->execute([
 
-        ':name' => $name, 
+        ':first_name' => $first_name,
+        ':last_name' => $last_name,  
         ':email' => $email,
+        ':phone'=> $phone,
          ':id' => $id
 
         ]);
